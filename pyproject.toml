@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "bookshopapp"
+version = "0.1.0"
+description = ""
+authors = ["baothai123789 <banbao22042004@gmail.com>"]
+readme = "README.md"
+packages = [{include = "bookshopapp", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.3"
+flask-sqlalchemy = "^3.1.1"
+flask-migrate = "^4.0.7"
+flask-restful = "^0.3.10"
+python-dotenv = "^1.0.1"
+cryptography = "^42.0.8"
+pymysql = "^1.1.1"
+gunicorn = "^22.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

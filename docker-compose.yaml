@@ -1,0 +1,29 @@
+services:
+  myapp:
+    build:
+      context: .
+      args:
+        - ENV=prod
+    ports:
+      - "8080:8080"
+    networks:
+      - mynet
+    depends_on:
+      - appdb
+  appdb:
+    container_name: myappdb
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=22042004bao
+    volumes:
+      - myvolume:/var/lib/mysql
+    networks:
+      - mynet
+    ports:
+      - "3306:3306"
+volumes:
+  myvolume:
+networks:
+  mynet:
+    driver: bridge
+    
